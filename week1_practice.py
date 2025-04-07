@@ -1,8 +1,11 @@
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
-image_path = r"C:\Users\Vivo\2025_medicalimage_and_AI\MURA-v1.1"
-# load and visualize the image
+import os
+
+current_folder = os.getcwd()
+image_path = os.path.join(current_folder, "MURA-v1.1")
+
 img = Image.open(f"{image_path}"+"/train/XR_FINGER/patient00169/study1_negative/image1.png").convert("L")
 plt.imshow(img, cmap='gray')
 plt.show()
